@@ -16,9 +16,9 @@ def calculate_tire_volume():
     aspect_ratio = int(input("Enter the aspect ratio of the tire (ex 60): "))
     diameter = int(input("Enter the diameter of the wheel in inches (ex 15): "))
 
-    volume = (pi * (width ** 2) * (aspect_ratio * ((width * aspect_ratio) + (2540 * diameter)))) / 10,000,000,000
+    volume = (pi * (width ** 2) * (aspect_ratio * ((width * aspect_ratio) + (2540 * diameter)))) / 10000000000
     
-    print(f"\nThe approximate volume is {volume} liters")
+    print(f"\nThe approximate volume is {round(volume, 2)} liters")
     # print(width, aspect_ratio, diameter)
 
 
