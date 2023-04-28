@@ -17,9 +17,9 @@ def calculate_tire_volume():
     aspect_ratio = int(input("Enter the aspect ratio of the tire (ex 60): "))
     diameter = int(input("Enter the diameter of the wheel in inches (ex 15): "))
 
-    volume = round((pi * (width ** 2) * (aspect_ratio * ((width * aspect_ratio) + (2540 * diameter)))) / 10000000000)
+    volume = round(((pi * (width ** 2) * (aspect_ratio * ((width * aspect_ratio) + (2540 * diameter)))) / 10000000000), 2)
 
-    print(f"\nThe approximate volume is {volume, 2} liters")
+    print(f"\nThe approximate volume is {volume} liters")
     save_data(width, aspect_ratio, diameter, volume)
     # print(width, aspect_ratio, diameter)
 
@@ -27,17 +27,16 @@ def calculate_tire_volume():
 def save_data(width: int, aspect_ratio: int, diameter: int, volume: float):
     """
     Appends to the end of the volumes.txt file one line of text that contains the following five values:
-current date
-width of the tire
-aspect ratio of the tire
-diameter of the wheel
-volume of the tire
+        date: current date
+        width: width of the tire
+        aspect_ratio: aspect ratio of the tire
+        diameter: diameter of the wheel
+        volume: volume of the tire
     """
     with open("volumes.txt", "+a") as file:
-        if len(list(file)) == 0:
-            file.write("Date, Width, Aspect ratio, Diameter, Volume\n")
-        date = datetime.today()
-        file.write(f"{str(date)}, {width}, {aspect_ratio}, {diameter}, {volume},")
+        today = datetime.today()
+        print(f"{today:%Y-%m-%d}, {width}, {aspect_ratio}, {diameter}, {volume}", end="\n", file=file)
+        # file.write(f"{today:%Y-%m-%d}, {width}, {aspect_ratio}, {diameter}, {volume}\n")
 
 
 if __name__ == "__main__":
