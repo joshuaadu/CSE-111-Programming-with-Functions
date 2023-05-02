@@ -35,7 +35,7 @@ def miles_per_gallon(start_miles: int | float, end_miles: int | float, amount_ga
         amount_gallons: A fuel amount in U.S. gallons.
     Return: Fuel efficiency in miles per gallon.
     """
-    mpg = (end_miles - start_miles) / amount_gallons
+    mpg = abs(end_miles - start_miles) / amount_gallons
     return mpg
 
 
