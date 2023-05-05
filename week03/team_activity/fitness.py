@@ -30,8 +30,10 @@ def main():
 
 def compute_age(birth_str: str):
     """Compute and return a person's age in years.
+
     Parameter birth_str: a person's birthdate stored
         as a string in this format: YYYY-MM-DD
+
     Return: a person's age in years.
     """
     # Convert a person's birthdate from a string
@@ -55,8 +57,10 @@ def compute_age(birth_str: str):
 
 
 def kg_from_lb(pounds: float):
-    """Convert a mass in pounds to kilograms (1 lb = 0.45359237 kg)..
+    """Convert a mass in pounds to kilograms (1 lb = 0.45359237 kg).
+
     Parameter pounds: a mass in U.S. pounds.
+
     Return: the mass in kilograms.
     """
     kg = pounds * 0.45359237
@@ -65,7 +69,9 @@ def kg_from_lb(pounds: float):
 
 def cm_from_in(inches: float):
     """Convert a length in inches to centimeters (1 in = 2.54 cm).
+
     Parameter inches: a length in inches.
+
     Return: the length in centimeters.
     """
     cm = inches * 2.54
@@ -74,20 +80,24 @@ def cm_from_in(inches: float):
 
 def body_mass_index(weight: float, height: float):
     """Compute and return a person's body mass index.
+
     Parameters
         weight: a person's weight in kilograms.
         height: a person's height in centimeters.
+
     Return: a person's body mass index.
     """
     return weight / (height ** 2) * 10000
 
 
-def basal_metabolic_rate(gender: str, weight: float, height: float, age: int):
+def basal_metabolic_rate(gender: str, weight: float, height: float, age: int ) -> float:
     """Compute and return a person's basal metabolic rate.
+
     Parameters
         weight: a person's weight in kilograms.
         height: a person's height in centimeters.
         age: a person's age in years.
+
     Return: a person's basal metabolic rate in kcals per day.
     """
     if gender.lower() == "f":
@@ -100,3 +110,4 @@ def basal_metabolic_rate(gender: str, weight: float, height: float, age: int):
 # this program will start executing.
 if __name__ == "__main__":
     main()
+    print(basal_metabolic_rate.__annotations__)
