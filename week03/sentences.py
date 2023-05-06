@@ -5,7 +5,16 @@ import random
 
 
 def main():
-    sentence = make_sentence
+    """
+    Main function to call your make_sentence function 
+    six times and print six sentences.
+    """
+    print(make_sentence("single", "past"))
+    print(make_sentence("single", "present"))
+    print(make_sentence("single", "future"))
+    print(make_sentence("plural", "past"))
+    print(make_sentence("plural", "present"))
+    print(make_sentence("plural", "future"))
 
 
 
@@ -112,5 +121,9 @@ def make_sentence(quantity, tense):
     determiner = get_determiner(quantity)
     noun = get_noun(quantity)
     verb = get_verb(quantity, tense)
-    sentence = f"{determiner.capitalize} {noun} {verb}"
-    return sentence.capitalize()
+    sentence = f"{determiner} {noun} {verb}".capitalize()
+    return sentence
+
+
+if __name__ == "__main__":
+    main()
